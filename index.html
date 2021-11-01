@@ -166,20 +166,20 @@
                 
             // });
 
-            // traj = new ActualTrajectory(function (positions) {
+            traj = new ActualTrajectory(function (positions) {
 
-            //     let lineMaterial = new THREE.LineBasicMaterial({
-            //         color: 0x00ff00
-            //     });
-            //     let lineGeometry = new THREE.Geometry();
-            //     for (let i = 0; i < positions.length; i++) {
-            //         let v = new THREE.Vector3().copy(positions[i]);
-            //         v.y = 1;
-            //         lineGeometry.vertices.push(v);
-            //     }
+                let lineMaterial = new THREE.LineBasicMaterial({
+                    color: 0x00ff00
+                });
+                let lineGeometry = new THREE.Geometry();
+                for (let i = 0; i < positions.length; i++) {
+                    let v = new THREE.Vector3().copy(positions[i]);
+                    v.y = 1;
+                    lineGeometry.vertices.push(v);
+                }
 
-            //     scene.add(new THREE.Line(lineGeometry, lineMaterial));
-            // });
+                scene.add(new THREE.Line(lineGeometry, lineMaterial));
+            });
 
             // new TargetTrajectory(function(positions){
 
@@ -235,9 +235,9 @@
                         next = traj.next();
                     }
 
-                    index = prev[2] - 1
+                    // index = prev[2] - 1
 
-                    pre_time = 30 * (drawCount) 
+                    // pre_time = 30 * (drawCount) 
                     
 
                         // if (index == pre_time){
@@ -266,7 +266,7 @@
                             // console.log(traj2)
 
                             
-                        }
+                        // }
                    
 
 
