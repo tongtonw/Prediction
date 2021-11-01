@@ -240,28 +240,28 @@
                     pre_time = 30 * (drawCount) 
                     
 
-                        // if (index == pre_time){
+                        if (index == pre_time){
                             
-                            // traj2 = new TargetTrajectory(function (positions) {
-                            //     let lineMaterial = new THREE.LineBasicMaterial({
-                            //         color: 'red',
-                            //         linewidth: 5
-                            //     });
-                            //     let lineGeometry = new THREE.Geometry();
-                            //     for (let i = 60 * drawCount; i < 60 * (drawCount + 1) ; i++) {
-                            //         let v = new THREE.Vector3().copy(positions[i]);
-                            //         v.y = 3;
-                            //         lineGeometry.vertices.push(v);
-                            //         console.log(i)
-                            //     }
-                            //     // lineGeometry.vertices.push(lineGeometry.vertices[0]);
+                            traj2 = new TargetTrajectory(function (positions) {
+                                let lineMaterial = new THREE.LineBasicMaterial({
+                                    color: 'red',
+                                    linewidth: 5
+                                });
+                                let lineGeometry = new THREE.Geometry();
+                                for (let i = 60 * drawCount; i < 60 * (drawCount + 1) ; i++) {
+                                    let v = new THREE.Vector3().copy(positions[i]);
+                                    v.y = 3;
+                                    lineGeometry.vertices.push(v);
+                                    console.log(i)
+                                }
+                                // lineGeometry.vertices.push(lineGeometry.vertices[0]);
 
-                            //     let line = new THREE.Line(lineGeometry, lineMaterial);
-                            //     line.rotateY(-Math.PI / 2);
+                                let line = new THREE.Line(lineGeometry, lineMaterial);
+                                line.rotateY(-Math.PI / 2);
 
-                            //     scene.add(line);
-                            //     drawCount += 1 
-                            // });
+                                scene.add(line);
+                                drawCount += 1 
+                            });
 
                             // console.log(traj2)
 
