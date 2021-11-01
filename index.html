@@ -172,7 +172,8 @@
                     color: 0x00ff00
                 });
                 let lineGeometry = new THREE.Geometry();
-                for (let i = 0; i < positions.length; i++) {
+                for (let i = 0; i < 2; i++) {
+                // for (let i = 0; i < positions.length; i++) {
                     let v = new THREE.Vector3().copy(positions[i]);
                     v.y = 1;
                     lineGeometry.vertices.push(v);
