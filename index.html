@@ -182,24 +182,24 @@
                 scene.add(new THREE.Line(lineGeometry, lineMaterial));
             });
 
-            // new TargetTrajectory(function(positions){
+            new TargetTrajectory(function(positions){
 
-            //     let lineMaterial = new THREE.LineBasicMaterial({
-            //         color: 'red'
-            //     });
-            //     let lineGeometry = new THREE.Geometry();
-            //     for (let i = 0; i < positions.length -1; i++) {
-            //         let v = new THREE.Vector3().copy(positions[i]);
-            //         v.y = 1;
-            //         lineGeometry.vertices.push(v);
-            //     }
-            //     // lineGeometry.vertices.push(lineGeometry.vertices[0]);
+                let lineMaterial = new THREE.LineBasicMaterial({
+                    color: 'red'
+                });
+                let lineGeometry = new THREE.Geometry();
+                for (let i = 0; i < positions.length -1; i++) {
+                    let v = new THREE.Vector3().copy(positions[i]);
+                    v.y = 1;
+                    lineGeometry.vertices.push(v);
+                }
+                // lineGeometry.vertices.push(lineGeometry.vertices[0]);
 
-            //     let line = new THREE.Line(lineGeometry, lineMaterial);
-            //     line.rotateY(-Math.PI/2);
+                let line = new THREE.Line(lineGeometry, lineMaterial);
+                line.rotateY(-Math.PI/2);
 
-            //     scene.add(line);
-            //     });
+                scene.add(line);
+                });
 
         }
 
