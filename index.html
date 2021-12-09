@@ -62,8 +62,8 @@
         });
         folder.open();
 
-        let t = 0; let drawCount = 0; let drawactCont = 0;
-        let MAX_POINTS; let line_incre; 
+        let t = 0; let drawCount = 0; 
+        let line_incre; 
 
         init();
         animate();
@@ -128,51 +128,12 @@
 
             });
 
-
-            
-
-            // traj = new ActualTrajectory(function (positions) {
-
-            //     var geometry = new THREE.BufferGeometry();
-            //     MAX_POINTS = positions.length
-            //     console.log(Array.isArray(positions))
-            //     // attributes
-            //     var displacement = new Float32Array(MAX_POINTS * 3); // 3 vertices per point
-            //     for (let i = 0; i < MAX_POINTS -3; i += 3){
-            //         v = positions[i];
-            //         console.log(v)
-            //         displacement[i] = v.x;
-            //         displacement[i + 1] = v.y;
-            //         displacement[i + 2] = v.z;
-            //     }
-            //     console.log(Array.isArray(displacement))
-            //     // var displacement = Float32Array.from(positions)
-            //     console.log(displacement)
-            //     geometry.addAttribute('position', new THREE.BufferAttribute(displacement, 3));
-
-            //     // drawcalls
-            //     drawactCont = 2; // draw the first 2 points, only
-            //     geometry.setDrawRange(0, drawactCont);
-
-            //     // material
-            //     var material = new THREE.LineBasicMaterial({
-            //     color: 0x00ff00,
-            //     linewidth: 2
-            //     });
-
-            //     // line
-            //     line_incre = new THREE.Line(geometry, material);
-            //     scene.add(line_incre);
-                
-            // });
-
             traj = new ActualTrajectory(function (positions) {
 
                 let lineMaterial = new THREE.LineBasicMaterial({
                     color: 0x00ff00
                 });
                 let lineGeometry = new THREE.Geometry();
-                // for (let i = 0; i < 2; i++) {
                 for (let i = 0; i < positions.length; i++) {
                     let v = new THREE.Vector3().copy(positions[i]);
                     v.y = 1;
@@ -181,25 +142,6 @@
 
                 scene.add(new THREE.Line(lineGeometry, lineMaterial));
             });
-
-            // new TargetTrajectory(function(positions){
-
-            //     let lineMaterial = new THREE.LineBasicMaterial({
-            //         color: 'red'
-            //     });
-            //     let lineGeometry = new THREE.Geometry();
-            //     for (let i = 0; i < positions.length -1; i++) {
-            //         let v = new THREE.Vector3().copy(positions[i]);
-            //         v.y = 1;
-            //         lineGeometry.vertices.push(v);
-            //     }
-            //     // lineGeometry.vertices.push(lineGeometry.vertices[0]);
-
-            //     let line = new THREE.Line(lineGeometry, lineMaterial);
-            //     line.rotateY(-Math.PI/2);
-
-            //     scene.add(line);
-            //     });
 
         }
 
@@ -264,7 +206,7 @@
                                 drawCount += 1 
                             });
 
-                            console.log(traj2)
+                            // console.log(traj2)
 
                             
                         }
@@ -276,8 +218,6 @@
 
             requestAnimationFrame(animate);
 
-            // drawactCont = (drawactCont + 1) % MAX_POINTS;
-            // line_incre.geometry.setDrawRange(0, drawCount);
 
             render();
 
